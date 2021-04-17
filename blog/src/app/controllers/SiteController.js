@@ -19,6 +19,14 @@ class SiteController {
   search(req, res) {
     res.render('search');
   }
+
+  getAllData(req, res, next) {
+    Course.find({})
+      .then((courses) => {
+        res.send(courses)
+      })
+      .catch(next);
+  }
 }
 
 module.exports = new SiteController();
