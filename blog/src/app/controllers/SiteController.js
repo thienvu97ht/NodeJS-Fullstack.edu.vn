@@ -23,7 +23,7 @@ class SiteController {
   getAllData(req, res, next) {
     Course.find({})
       .then((courses) => {
-        res.send(courses)
+        res.send(courses);
       })
       .catch(next);
   }
